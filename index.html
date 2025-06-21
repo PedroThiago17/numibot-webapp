@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7f9;
+    }
+
+    #loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f4f7f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner {
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #1976D2;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .logo-carga {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .header-logo {
+      text-align: center;
+      background-color: #f4f7f9;
+      padding-top: 10px;
+    }
+
+    .header-logo img {
+      max-height: 115px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla de carga -->
+  <div id="loader">
+    <div class="loader-content">
+      <img src="img/NumiBot-logo-mini-bgless.png" alt="Logo cargando" class="logo-carga">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <!-- Encabezado con logo -->
+  <div class="header-logo">
+    <img src="img/NumiBot-logo-mini-bgless.png" alt="Logo principal">
+  </div>
+
+  <!-- Contenido principal -->
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbwW-N464-vtkILkRQeviieVBIUHVAV34N2NzjnnoP9meUvoEJXiFOLPqYnqv52XUQ/exec"
+    onload="document.getElementById('loader').style.display = 'none';">
+  </iframe>
+</body>
+</html>
